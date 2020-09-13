@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularLessonOne';
+  textOfTodo = '';
+  allTodos = [];
+
+  addToDo = function() {
+    this.allTodos.push(this.textOfTodo);
+    console.log(this.allTodos);
+    this.textOfTodo = '';
+  };
+
+  deleteTodo(delTodo) {
+    this.allTodos = this.allTodos.filter(value => delTodo !== value)
+  };
 }
