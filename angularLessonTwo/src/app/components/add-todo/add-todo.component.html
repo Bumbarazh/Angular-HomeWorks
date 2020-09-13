@@ -1,0 +1,11 @@
+<h1>Add your todo hear!</h1>
+<label>Type in what to do </label>
+<input [(ngModel)]="textOfTodo">
+<button (click)="addTodo()">Add todo</button>
+<div>
+  <ul>
+    <li  *ngFor="let todo of allTodos">
+      {{todo}}
+    </li>
+  </ul>
+</div>
