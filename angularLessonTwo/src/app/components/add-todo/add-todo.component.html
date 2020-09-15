@@ -1,3 +1,4 @@
+<button routerLink="">Go to Home</button>
 <h1>Add your todo hear!</h1>
 <label>Type in what to do </label>
 <input [(ngModel)]="textOfTodo">
@@ -6,6 +7,7 @@
   <ul>
     <li  *ngFor="let todo of allTodos">
       {{todo}}
+      <button (click)="removeTodo(todo)">Remove</button>
     </li>
   </ul>
 </div>

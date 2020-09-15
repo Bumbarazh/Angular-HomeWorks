@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './add-todo.component.html',
   styleUrls: ['./add-todo.component.css']
 })
-export class AddTodoComponent implements OnInit {
+export class AddTodoComponent {
   textOfTodo = '';
   allTodos = [];
 
@@ -15,7 +15,7 @@ export class AddTodoComponent implements OnInit {
     this.allTodos.push(this.textOfTodo);
     this.textOfTodo = '';
   }
-  ngOnInit(): void {
+  removeTodo = (todo: string) => {
+    this.allTodos = this.allTodos.filter(value => todo !== value);
   }
-
 }
