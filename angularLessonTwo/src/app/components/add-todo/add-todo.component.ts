@@ -13,6 +13,7 @@ export class AddTodoComponent {
   }
   addTodo = () => {
     this.allTodos.push(this.textOfTodo);
+    console.log(this.textOfTodo);
     this.textOfTodo = '';
   }
   removeTodo = (todo: string) => {
