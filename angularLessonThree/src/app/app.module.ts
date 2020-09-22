@@ -38,6 +38,10 @@ import { CommentComponent } from './components/comments/comment/comment.componen
     )
   ],
   providers: [],
+  exports: [
+    UserComponent,
+    PostComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
