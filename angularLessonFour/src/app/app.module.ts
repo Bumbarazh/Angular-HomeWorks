@@ -13,6 +13,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { PostComponent } from './components/posts/post/post.component';
 import { CommentComponent } from './components/comments/comment/comment.component';
 import { UsersPostsComponent } from './components/users/users-posts/users-posts.component';
+import { UserDetailsComponent } from './components/users/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UsersPostsComponent } from './components/users/users-posts/users-posts.
     UserComponent,
     PostComponent,
     CommentComponent,
-    UsersPostsComponent
+    UsersPostsComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,12 @@ import { UsersPostsComponent } from './components/users/users-posts/users-posts.
       {
         path: 'users', component: AllUsersComponent,
         children: [
-          {path: 'posts', component: UsersPostsComponent}
+          {
+            path: 'posts', component: UsersPostsComponent
+          },
+          {
+            path: 'details/:id', component: UserDetailsComponent
+          }
         ]
       },
       {
