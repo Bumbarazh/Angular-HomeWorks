@@ -14,6 +14,9 @@ import { PostComponent } from './components/posts/post/post.component';
 import { CommentComponent } from './components/comments/comment/comment.component';
 import { UsersPostsComponent } from './components/users/users-posts/users-posts.component';
 import { UserDetailsComponent } from './components/users/user-details/user-details.component';
+import { UserDetailsTwoComponent } from './components/users/user-details-two/user-details-two.component';
+import { UserDetailsThreeComponent } from './components/users/user-details-three/user-details-three.component';
+import { PostsCommentsComponent } from './components/posts/posts-comments/posts-comments.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { UserDetailsComponent } from './components/users/user-details/user-detai
     PostComponent,
     CommentComponent,
     UsersPostsComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    UserDetailsTwoComponent,
+    UserDetailsThreeComponent,
+    PostsCommentsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,11 +46,22 @@ import { UserDetailsComponent } from './components/users/user-details/user-detai
         path: 'users', component: AllUsersComponent,
         children: [
           {
-            path: 'posts', component: UsersPostsComponent
+            path: 'posts', component: UsersPostsComponent,
+            children: [
+              {
+                path: 'comments/:id', component: AllCommentsComponent
+              }
+            ]
           },
+          // {
+          //   path: 'details/:id', component: UserDetailsComponent
+          // }
           {
-            path: 'details/:id', component: UserDetailsComponent
+            path: 'details/:id', component: UserDetailsTwoComponent
           }
+          // {
+          //   path: 'details/:id', component: UserDetailsThreeComponent
+          // }
         ]
       },
       {
