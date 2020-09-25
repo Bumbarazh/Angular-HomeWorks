@@ -49,7 +49,7 @@ import { PostsCommentsComponent } from './components/posts/posts-comments/posts-
             path: 'posts', component: UsersPostsComponent,
             children: [
               {
-                path: 'comments/:id', component: AllCommentsComponent
+                path: 'comments/:id', component: PostsCommentsComponent
               }
             ]
           },
@@ -65,7 +65,11 @@ import { PostsCommentsComponent } from './components/posts/posts-comments/posts-
         ]
       },
       {
-        path: 'posts', component: AllPostsComponent
+        path: 'posts', component: AllPostsComponent, children: [
+          {
+            path: 'comments/:id', component: PostsCommentsComponent
+          }
+        ]
       },
       {
         path: 'commments', component: AllCommentsComponent

@@ -14,7 +14,11 @@ export class PostsCommentsComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
               private postService: PostService) {
     this.activatedRoute.queryParams.subscribe(value => {
-      this.postService.getCommentsOfPost(value.id).subscribe(value1 => this.allComments = value1);
+      this.postService.getCommentsOfPost(value.postId).subscribe(value1 => {
+          this.allComments = value1;
+          console.log(this.allComments);
+        }
+      );
     });
   }
 
