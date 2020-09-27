@@ -5,12 +5,9 @@ import {UserComponent} from './user/user.component';
 import {UserDetailsComponent} from './user-details/user-details.component';
 import {UserDetailsTwoComponent} from './user-details-two/user-details-two.component';
 import {UserDetailsThreeComponent} from './user-details-three/user-details-three.component';
-import {UsersPostsComponent} from './users-posts/posts-of-user/users-posts.component';
-import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {UserService} from './services/user.service';
-import { UserPostComponent } from './users-posts/user-post/user-post.component';
 
 
 
@@ -21,8 +18,7 @@ import { UserPostComponent } from './users-posts/user-post/user-post.component';
     UserDetailsComponent,
     UserDetailsTwoComponent,
     UserDetailsThreeComponent,
-    UsersPostsComponent,
-    UserPostComponent],
+  ],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -31,7 +27,7 @@ import { UserPostComponent } from './users-posts/user-post/user-post.component';
         path: '', component: AllUsersComponent,
         children: [
           {
-            path: 'posts', component: UsersPostsComponent
+            path: 'posts', loadChildren: () => import('../users/users-posts/user-posts.module').then(value => value.UserPostsModule)
           },
           {
             path: 'details/:id', component: UserDetailsTwoComponent

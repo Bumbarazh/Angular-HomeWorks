@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Post} from '../../../posts/models/post';
 import {UserService} from '../../services/user.service';
 import {User} from '../../models/user';
+import {UsersPostsService} from '../services/users-posts.service';
 
 @Component({
   selector: 'app-users-posts',
@@ -14,9 +15,9 @@ export class UsersPostsComponent implements OnInit {
   user: User;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private userService: UserService) {
+              private usersPostsService: UsersPostsService) {
     this.activatedRoute.queryParams.subscribe(value => {
-      this.userService.getUsersPostsById(value.id).subscribe(value1 => this.allPosts = value1);
+      this.usersPostsService.getUsersPostsById(value.id).subscribe(value1 => this.allPosts = value1);
     });
   }
 

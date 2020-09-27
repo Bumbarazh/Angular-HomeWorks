@@ -4,11 +4,15 @@ import {PostCommentsService} from './services/post-comments.service';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {PostsCommentsComponent} from './comments-of-post/posts-comments.component';
+import {PostCommentComponent} from './post-comment/post-comment.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    PostsCommentsComponent,
+    PostCommentComponent
+  ],
   imports: [
     HttpClientModule,
     CommonModule,
