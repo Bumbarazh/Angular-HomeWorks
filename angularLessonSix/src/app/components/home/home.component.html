@@ -1,5 +1,6 @@
-<form #myForm="ngForm">
-  <select #id="ngModel" [(ngModel)]="currentUser" name="id">
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+  <select #id="ngModel" [(ngModel)]="user" name="id" required>
+    <option selected hidden>Choose here</option>
     <option [value]="1">1</option>
     <option [value]="2">2</option>
     <option [value]="3">3</option>
@@ -11,10 +12,13 @@
     <option [value]="9">9</option>
     <option [value]="10">10</option>
   </select>
-  <button (click)="getCurrentUser(myForm, id)">Get User</button>
+  <button type="submit" (click)="getCurrentUser(myForm, id)">Get User</button>
+  <div [hidden]="submitted">
+    {{user.id}}
+    {{user.name}}
+    {{user.username}}
+  </div>
 </form>
-  {{user.id}}
-  {{user.name}}
-  {{user.username}}
+
 
 
