@@ -1,24 +1,25 @@
-<form #myForm="ngForm" (ngSubmit)="onSubmit()">
-  <select #id="ngModel" [(ngModel)]="user" name="id" required>
-    <option selected hidden>Choose here</option>
-    <option [value]="1">1</option>
-    <option [value]="2">2</option>
-    <option [value]="3">3</option>
-    <option [value]="4">4</option>
-    <option [value]="5">5</option>
-    <option [value]="6">6</option>
-    <option [value]="7">7</option>
-    <option [value]="8">8</option>
-    <option [value]="9">9</option>
-    <option [value]="10">10</option>
+<form #myForm="ngForm">
+  <select #id="ngModel"
+          [(ngModel)]="user" name="id"
+          (change)="userI(myForm)">
+<!--    <option value="Select user" selected>Select User</option>-->
+    <option *ngFor="let currUser of userArray"
+            [value]="currUser.id">
+      {{currUser.id}}
+    </option>
   </select>
-  <button type="submit" (click)="getCurrentUser(myForm, id)">Get User</button>
-  <div [hidden]="submitted">
-    {{user.id}}
-    {{user.name}}
-    {{user.username}}
-  </div>
 </form>
-
-
+<div *ngIf="userValid">
+  {{user.id}}
+  {{user.name}}
+  {{user.username}}
+  <button (click)="userPosts(user.id)">User Posts</button>
+</div>
+<div *ngIf="postValid">
+ <div *ngFor="let post of postArray">
+   {{post.id}}
+   {{post.title}}
+   {{post.body}}
+ </div>
+</div>
 
