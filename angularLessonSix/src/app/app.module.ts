@@ -7,13 +7,17 @@ import { HomeComponent } from './components/home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
-import { UserComponent } from './components/user/user.component';
+import { UserComponent } from './components/user/components/user.component';
+import { PostsComponent } from './components/posts/posts/posts.component';
+import { PostComponent } from './components/posts/post/post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    UserComponent
+    UserComponent,
+    PostsComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +27,9 @@ import { UserComponent } from './components/user/user.component';
     RouterModule.forRoot([
       {
         path: '', component: HomeComponent
+      },
+      {
+        path: 'user/:id', loadChildren: () => import('./components/user/user.module').then(value => value.UserModule)
       }
     ])
   ],

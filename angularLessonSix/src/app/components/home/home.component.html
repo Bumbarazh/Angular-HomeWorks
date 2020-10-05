@@ -1,25 +1,9 @@
-<form #myForm="ngForm">
   <select #id="ngModel"
-          [(ngModel)]="user" name="id"
-          (change)="userI(myForm)">
-<!--    <option value="Select user" selected>Select User</option>-->
+          [(ngModel)]="valOfSelect" name="id"
+          (change)="userI(id)">
     <option *ngFor="let currUser of userArray"
             [value]="currUser.id">
       {{currUser.id}}
     </option>
   </select>
-</form>
-<div *ngIf="userValid">
-  {{user.id}}
-  {{user.name}}
-  {{user.username}}
-  <button (click)="userPosts(user.id)">User Posts</button>
-</div>
-<div *ngIf="postValid">
- <div *ngFor="let post of postArray">
-   {{post.id}}
-   {{post.title}}
-   {{post.body}}
- </div>
-</div>
-
+  <button [routerLink]="['user', id.value]">User details</button>
