@@ -6,14 +6,12 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { UserComponent } from './components/user/user.component';
 import { UserPipe } from './components/pipes/user.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    UserComponent,
     UserPipe
   ],
   imports: [
