@@ -1,0 +1,9 @@
+<div>
+  <form [formGroup]="form">
+    <select [formControl]="name">
+      <option *ngFor="let user of allUsers" [value]="user.id">{{user.name}}</option>
+    </select>
+    <button [routerLink]="['user', name.value]">User Info</button>
+  </form>
+</div>
+<router-outlet></router-outlet>
