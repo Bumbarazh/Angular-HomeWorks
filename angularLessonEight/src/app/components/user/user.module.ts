@@ -14,7 +14,11 @@ import {RouterModule} from '@angular/router';
     HttpClientModule,
     RouterModule.forChild([
       {
-        path: '', component: UserComponent
+        path: '', component: UserComponent, children: [
+          {
+            path: 'posts/:id', loadChildren: () => import('../userposts/user-posts.module').then(value => value.UserPostsModule)
+          }
+        ]
       }
     ])
   ],

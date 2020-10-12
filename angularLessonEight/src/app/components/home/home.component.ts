@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {IUser} from '../user/models/user';
 import {UsersService} from './services/users.service';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private usersService: UsersService) {
     this.form = new FormGroup(
-      {name: this.name},
+      {name: this.name}
     );
   }
 

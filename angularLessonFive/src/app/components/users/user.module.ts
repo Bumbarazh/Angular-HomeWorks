@@ -27,7 +27,7 @@ import {UserService} from './services/user.service';
         path: '', component: AllUsersComponent,
         children: [
           {
-            path: 'posts', loadChildren: () => import('../users/users-posts/user-posts.module').then(value => value.UserPostsModule)
+            path: 'userposts', loadChildren: () => import('../users/users-posts/user-posts.module').then(value => value.UserPostsModule)
           },
           {
             path: 'details/:id', component: UserDetailsTwoComponent

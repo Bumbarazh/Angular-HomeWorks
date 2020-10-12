@@ -32,7 +32,7 @@ import { CommentComponent } from './components/comments/comment/comment.componen
       [
         {path: '', component: HomeComponent},
         {path: 'users', component: AllUsersComponent},
-        {path: 'posts', component: AllPostsComponent},
+        {path: 'userposts', component: AllPostsComponent},
         {path: 'comments', component: AllCommentsComponent}
       ]
     )

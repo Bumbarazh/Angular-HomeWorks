@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {IPost} from '../models/post';
 import {ActivatedRoute} from '@angular/router';
 import {PostService} from '../services/post.service';
-import {IPost} from '../models/post';
 
 @Component({
   selector: 'app-posts',
@@ -9,14 +9,13 @@ import {IPost} from '../models/post';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-  posts: IPost[] = [];
-  h1 = 'All user userposts';
+  allPosts: IPost[] = [];
 
   constructor(private activatedRoute: ActivatedRoute,
               private postService: PostService) {
-    this.activatedRoute.queryParams.subscribe(value => {
-      this.postService.getAllPostsOfUser(value.id).subscribe(value1 => this.posts = value1);
-      console.log(value);
+    this.activatedRoute.params.subscribe(params => {
+      this.postService.getAllPostsByUserId(params.id).subscribe(value => this.allPosts = value);
+      console.log(this.allPosts);
     });
   }
 
