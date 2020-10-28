@@ -16,7 +16,7 @@ import {UserComponent} from './components/user.component';
       {
         path: '', component: UserComponent, children: [
           {
-            path: 'posts', loadChildren: () => import('../posts/post.module').then(value => value.PostModule)
+            path: 'uposts', loadChildren: () => import('../posts/post.module').then(value => value.PostModule)
           }
         ]
       },
