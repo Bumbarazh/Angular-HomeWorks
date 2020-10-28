@@ -24,7 +24,7 @@ import {HttpClientModule} from '@angular/common/http';
         path: 'users', loadChildren: () => import('./components/users/user.module').then(value => value.UserModule),
       },
       {
-        path: 'userposts', loadChildren: () => import('./components/posts/post.module').then(value => value.PostModule)
+        path: 'posts', loadChildren: () => import('./components/posts/post.module').then(value => value.PostModule)
       },
       {
         path: 'comments', loadChildren: () => import('./components/comments/comments.module').then(value => value.CommentsModule)
