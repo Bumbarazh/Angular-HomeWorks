@@ -1,7 +1,7 @@
 <div>
   {{user?.id}}
   {{user?.name}}
-  <button [routerLink]="['userposts']" [queryParams]="{id: user.id}">User posts</button>
+  <button [routerLink]="['posts']" [queryParams]="{id: user.id}">User posts</button>
 <!--  <button [routerLink]="['details', user.id]">User Info</button>-->
   <button [routerLink]="['details', user.id]" [state]="{user: user}">User Info</button>
 <!--  <button (click)="goToCurrentUser(user.id)">User Info</button>-->
