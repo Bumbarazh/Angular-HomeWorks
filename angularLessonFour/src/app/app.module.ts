@@ -46,7 +46,7 @@ import { PostsCommentsComponent } from './components/posts/posts-comments/posts-
         path: 'users', component: AllUsersComponent,
         children: [
           {
-            path: 'userposts', component: UsersPostsComponent,
+            path: 'posts', component: UsersPostsComponent,
             children: [
               {
                 path: 'comments/:id', component: PostsCommentsComponent
